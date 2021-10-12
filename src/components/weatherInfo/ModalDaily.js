@@ -5,7 +5,7 @@ import moment from 'moment';
 const ModalDaily = ({ modalToggle, day }) => {
     return (       
 
-            <div className="flex flex-col justify-between items-center h-full py-6 bg-blue-100 text-primary relative">
+            <div className="flex flex-col justify-between items-center h-full py-6 bg-third text-primary relative">
 
                 {/* ----- Closing icon ----- */}
                 <div className="absolute top-4 right-4 cursor-pointer" onClick={modalToggle}>
@@ -20,7 +20,7 @@ const ModalDaily = ({ modalToggle, day }) => {
 
 
                 {/* ----- Weather Image & Min-Max temperatures ----- */}
-                <div className="rounded-md shadow-md p-4 w-4/5 text-center bg-third">
+                <div className="shadow-box p-4 w-4/5 text-center bg-third">
                     
                     <img 
                         src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
@@ -40,7 +40,7 @@ const ModalDaily = ({ modalToggle, day }) => {
                 
 
                 {/* ----- 4 daily temperatures ----- */}
-                <div className="flex w-4/5 px-4 py-2 justify-between rounded-md shadow-md text-sm bg-third">
+                <div className="flex w-4/5 px-4 py-2 justify-between shadow-box text-sm bg-third">
                     
                     <div className="text-center">
                         <p className="font-semibold">Morning</p>
@@ -66,7 +66,7 @@ const ModalDaily = ({ modalToggle, day }) => {
 
 
                 {/* ----- Humidity - Wind ----- */}
-                <div className="flex w-4/5 py-2 justify-evenly rounded-md shadow-md text-sm bg-third">
+                <div className="flex w-4/5 py-2 justify-evenly shadow-box text-sm bg-third">
                     <p>
                         <span className="font-semibold">Humidity: </span>
                         {day.humidity}%
@@ -79,7 +79,7 @@ const ModalDaily = ({ modalToggle, day }) => {
                          
 
                 {/* ----- Sunrise - Sunset ----- */}
-                <div className="flex w-4/5 py-2 justify-evenly rounded-md shadow-md text-sm bg-third">
+                <div className="flex w-4/5 py-2 justify-evenly shadow-box text-sm bg-third">
                     <p>
                         <span className="font-semibold">Sunrise: </span>
                         {moment.unix(day.sunrise).format('HH:MM')}

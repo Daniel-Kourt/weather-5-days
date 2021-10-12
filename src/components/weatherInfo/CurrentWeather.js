@@ -7,16 +7,16 @@ const makeFirstLetterCapital = text => {
 
 const CurrentWeather = ({ data,city }) => {
     return (
-        <div className="w-full md:w-1/3 mb-8 md:mb-0 md:mr-8 bg-third rounded-md shadow-lg p-4">
+        <div className="w-full md:w-1/3 mb-8 md:mb-0 md:mr-8 bg-third shadow-box p-4">
             
             <div className="flex flex-col justify-around h-full">
 
                 {/* ---- City name & Date ---- */}
                 <div>
-                    <h3 className="text-sm font-semibold text-blue-900">
+                    <h3 className="title text-right">
                         {city}
                     </h3>
-                    <p className="text-sm font-semibold text-blue-900">
+                    <p className="title text-right">
                         {moment.unix(data.dt).format('D MMM YYYY , H:mm')}
                     </p>
                 </div>

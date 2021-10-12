@@ -28,8 +28,9 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
       primary: '#081845',
-      secondary: '#F5F5F5',
-      third: '#4AC7EE',
+      secondary: '#f5f5f5',
+      third: '#4ac7ee',
+      fourth: '#4ac7fd',
     },
     spacing: {
       px: '1px',

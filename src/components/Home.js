@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
         {endGeoLocation && 
-            <div className="bg-secondary">
+            <div className="bg-third">
                 
                 <Main coord={coord} error={error} />
                 

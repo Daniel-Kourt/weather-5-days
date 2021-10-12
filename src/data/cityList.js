@@ -226,7 +226,7 @@ export const cities = [
     },
     {
       "id": 2792413,
-      "name": "Liege",
+      "name": "Liège",
       "country": "BE",
       "coord": {
         "lon": 5.56749,

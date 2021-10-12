@@ -39,7 +39,8 @@ const DailyWeather = ({day}) => {
     return (
         <>
             <article 
-                className="flex md:flex-col justify-between items-center px-4 md:py-4 text-sm h-12 md:h-auto bg-third rounded-md shadow-md" 
+                className="flex md:flex-col justify-between items-center px-4 md:py-4 text-sm h-12 md:h-auto bg-third shadow-box cursor-pointer hover:bg-fourth"
+                onClick={modalToggle} 
             >
 
                     <p className="w-1/3 md:w-full font-semibold">
@@ -49,7 +50,7 @@ const DailyWeather = ({day}) => {
                         <span className="hidden lg:block">
                             {moment.unix(day.dt).format('dddd')}
                         </span>
-                        <span> {moment.unix(day.dt).format('D')}
+                        <span> {moment.unix(day.dt).format('D/M')}
                         </span>
                     </p>
 
@@ -70,10 +71,10 @@ const DailyWeather = ({day}) => {
                         />     
                     </div>
 
-                    <div className="w-1/3 text-2xl text-right font-bold cursor-pointer md:order-4" onClick={modalToggle}>
+                    {/* <div className="w-1/3 text-2xl text-right font-bold cursor-pointer md:order-4" onClick={modalToggle}>
                         <span className="md:hidden">+</span>
-                        <span className="hidden md:block text-xs text-blue-900 pt-4 hover:underline">More</span>
-                    </div>              
+                        <span className="hidden md:block text-xs pt-4 hover:underline">More</span>
+                    </div>               */}
                                       
                     
             </article>

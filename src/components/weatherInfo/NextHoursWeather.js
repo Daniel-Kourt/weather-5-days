@@ -3,10 +3,10 @@ import moment from 'moment';
 
 const NextHoursWeather = ({data}) => {
     return (
-        <div className="w-full md:w-2/3 bg-third rounded-md shadow-md px-2 py-4">
+        <div className="w-full md:w-2/3 bg-third px-2 py-4 shadow-box">
 
-            <p className="text-sm font-semibold pb-3 text-center text-blue-900">
-                24h Forecast
+            <p className="title pb-3 text-center">
+                Next 24 hours
             </p>
             
             <div className="flex justify-between items-center h-full">

@@ -1,8 +1,7 @@
-import React from 'react'
 import useFetchWeather from '../../hooks/useFetchWeather'
-import CurrentWeather from './CurrentWeather';
-import NextDaysWeather from './NextDaysWeather';
-import NextHoursWeather from './NextHoursWeather';
+import CurrentWeather from './CurrentWeather'
+import NextDaysWeather from './NextDaysWeather'
+import NextHoursWeather from './NextHoursWeather'
 
 const WeatherInfo = ({lat,lon,city}) => {
 
@@ -26,7 +25,12 @@ const WeatherInfo = ({lat,lon,city}) => {
                     <div className="flex w-full flex-col md:flex-row">
                         <CurrentWeather data={data.current} city={city}/>
                         <NextHoursWeather data={data.hourly} />
-                    </div>                
+                    </div>
+
+                    <div className="flex justify-center items-center pt-8 pb-4">
+                        <h3 className="title">Next 7 Days</h3>  
+                    </div>
+
                     <NextDaysWeather data={data.daily} />               
                 </>
             )}
