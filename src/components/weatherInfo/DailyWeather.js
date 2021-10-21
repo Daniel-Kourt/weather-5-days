@@ -44,7 +44,7 @@ const DailyWeather = ({day}) => {
             >
 
                     <p className="w-1/3 md:w-full font-semibold">
-                        <span className="lg:hidden">
+                        <span className="lg:hidden md:block">
                             {moment.unix(day.dt).format('ddd')}
                         </span>
                         <span className="hidden lg:block">

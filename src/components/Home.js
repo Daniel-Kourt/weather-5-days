@@ -1,20 +1,24 @@
 import React from 'react';
 import useGeoLocation from '../hooks/useGeoLocation';
+import Loading from './Loading';
 import Main from './Main';
 
 
 const Home = () => {
 
-    const {coord, endGeoLocation, error} = useGeoLocation();
+    const {coord, endGeoLocation, city} = useGeoLocation();
     
     return (
         <>
-        {endGeoLocation && 
+        {endGeoLocation 
+            ?
             <div className="bg-third">
                 
-                <Main coord={coord} error={error} />
+                <Main coord={coord} city={city} />
                 
             </div>
+            :
+            <Loading />
         }            
         </>
     )

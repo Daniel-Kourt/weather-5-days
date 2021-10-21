@@ -1,30 +1,33 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
-const useFetchWeather = (lat,lon) => {
+const useFetchWeather = (lat, lon) => {
+  const [data, setData] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
-    const [data, setData] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    // error handling TO DO 
 
-    useEffect(() => {
+  const fetchData = async () => {
 
-      fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_OWM}&units=metric&exclude=minutely`)
-        .then(res => {
-            if (!res.ok) { // error coming back from server
-              throw Error('could not fetch the data for that resource');
-            } 
-            return res.json();
-          })
-          .then(data => {
-            setIsPending(false);
-            setData(data);
-            console.log(data);
-            //setError(null);
-          });
-            
-    }, [lat,lon]);
+    try {
 
-    return {data, isPending};
-}
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_OWM}&units=metric&exclude=minutely`);
+      const data = await response.json();
+      setData(data);
+      
+    }
+    catch (err) {
+      setError(err);
+    }
+    finally {
+      setIsPending(false);
+    }
+  }
 
-export default useFetchWeather
+  useEffect(() => {
+    fetchData();    
+  }, [lat, lon]);
+
+  return { data, isPending, error };
+};
+
+export default useFetchWeather;

@@ -30,12 +30,16 @@ const NextHoursWeather = ({data}) => {
                                 className="w-full"
                             />   
 
-                            <p className="text-sm font-semibold">
+                            <p className="text-base font-semibold">
                                 {Math.round(hour.temp)}&#176;
                             </p>
 
                             <p className="text-xs pt-1">
                                 {hour.humidity}%
+                            </p> 
+
+                            <p className="text-xs pt-1">
+                                {Math.round(hour.wind_speed)} km/h
                             </p>                        
 
                         </article>

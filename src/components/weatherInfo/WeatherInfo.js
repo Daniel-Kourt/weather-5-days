@@ -1,4 +1,6 @@
+
 import useFetchWeather from '../../hooks/useFetchWeather'
+import Loading from '../Loading'
 import CurrentWeather from './CurrentWeather'
 import NextDaysWeather from './NextDaysWeather'
 import NextHoursWeather from './NextHoursWeather'
@@ -13,12 +15,8 @@ const WeatherInfo = ({lat,lon,city}) => {
     return (
         <div className="w-full mx-auto px-4 xs:px-12 sm:px-16 md:px-4 max-w-screen-lg text-primary pb-8">
 
-            { isPending && 
-                <div className="mt-8">
-                    <p className="text-center text-xl text-primary">
-                        Loading ...
-                    </p>
-                </div>
+            { isPending &&                                    
+                    <Loading />
             }
             { data && (
                 <>                

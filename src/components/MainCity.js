@@ -11,8 +11,8 @@ const MainCity = ({city}) => {
         { data && (            
             
             <div 
-                className="rounded-lg shadow-xl border-primary border-2 text-primary cursor-pointer overflow-hidden hover:opacity-80"
-                // onClick={() => select(city.id)}            
+                className="rounded-lg shadow-xl border-primary border-2 text-primary overflow-hidden"
+                //onClick={}            
             >
                 {/* photo of the city */}
                 <div className="h-4/5 overflow-hidden">
@@ -25,7 +25,7 @@ const MainCity = ({city}) => {
 
                 <div className="flex items-center justify-between px-4 md:px-2 h-1/5 text-sm">
                     {/* name of the city */}
-                    <h5>
+                    <h5 className="font-semibold">
                         {city.name}
                     </h5>
 
